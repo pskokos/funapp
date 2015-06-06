@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Shiasurprises</h1>
+<a href="/high_scores">hey </a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shiasurprises.each do |shiasurprise| %>
+      <tr>
+        <td><%= shiasurprise.name %></td>
+        <td><%= shiasurprise.amount %></td>
+        <td><%= link_to 'Show', shiasurprise %></td>
+        <td><%= link_to 'Edit', edit_shiasurprise_path(shiasurprise) %></td>
+        <td><%= link_to 'Destroy', shiasurprise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shiasurprise', new_shiasurprise_path %>
